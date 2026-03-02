@@ -83,6 +83,15 @@ def createModel(df_num):
     model.fit(X_train, y_train)
     return model
 
+DE_PARA_OBESITY = {
+    "normal_weight": "peso normal",
+    "overweight_level_i": "sobrepeso I",
+    "overweight_level_ii": "sobrepeso II",
+    "obesity_type_i": "obesidade I",
+    "obesity_type_ii": "obesidade II",
+    "obesity_type_iii": "obesidade III",
+}
+
 def classes(df_num):
     le = LabelEncoder()
     df_num['Obesity'] = le.fit_transform(df_num['Obesity'])
@@ -127,9 +136,13 @@ def testar_paciente(dados, model, le):
     df_paciente = pd.DataFrame([dados])
 
     pred = model.predict(df_paciente)[0]
-    classe = le.inverse_transform([pred])[0]
+    # classe em inglês
+    classe_en = le.inverse_transform([pred])[0]
 
-    return [classe, imc]
+    # de–para para português
+    classe_pt = DE_PARA_OBESITY.get(classe_en, classe_en)
+
+    return [classe_pt, imc]
 
 
 
