@@ -84,12 +84,13 @@ def createModel(df_num):
     return model
 
 DE_PARA_OBESITY = {
-    "normal_weight": "peso normal",
-    "overweight_level_i": "sobrepeso I",
-    "overweight_level_ii": "sobrepeso II",
-    "obesity_type_i": "obesidade I",
-    "obesity_type_ii": "obesidade II",
-    "obesity_type_iii": "obesidade III",
+    "Insufficient_Weight": "Peso insuficiente",
+    "Normal_Weight": "Peso normal",
+    "Overweight_Level_I": "Sobrepeso I",
+    "Overweight_Level_II": "Sobrepeso II",
+    "Obesity_Type_I": "Obesidade I",
+    "Obesity_Type_II": "Obesidade II",
+    "Obesity_Type_III": "Obesidade III",
 }
 
 def classes(df_num):
