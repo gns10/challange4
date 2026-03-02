@@ -10,7 +10,7 @@ df = pd.read_csv(csv_path, sep=",")
 # # Featuring engineering
 # ## Arredondamento dos dados numéricos
 def featuringEngineering():
-    df = pd.read_csv('Obesity.csv',sep=',')
+    df = pd.read_csv(csv_path, sep=",")
     df.head(25)
     df.info()
     cols = ['Age','Weight','FCVC','NCP','CH2O','FAF','TUE']
