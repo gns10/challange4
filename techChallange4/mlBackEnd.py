@@ -1,8 +1,12 @@
+import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
-df = pd.read_csv('Obesity.csv',sep=',')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(BASE_DIR, "Obesity.csv")
+
+df = pd.read_csv(csv_path, sep=",")
 # # Featuring engineering
 # ## Arredondamento dos dados numéricos
 def featuringEngineering():
