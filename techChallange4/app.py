@@ -1,10 +1,10 @@
 import streamlit as st
-from techChallange4.mlBackEnd import recebeDados
+from .mlBackEnd import recebeDados
 
 
 st.set_page_config(page_title="Teste de Paciente")
 
-st.title("🧑‍⚕️ Avaliação de Paciente")
+st.title(" Avaliação de Paciente")
 
 gender = st.selectbox("Gênero", ["Feminino", "Masculino"])
 gender = 0 if gender == "Feminino" else 1
