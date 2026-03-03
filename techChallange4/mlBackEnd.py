@@ -101,7 +101,7 @@ def classes(df_num):
 # # Teste
 
 
-# Função interativa para input de dados
+# Função para input de dados
 def recebeDados(gender, age, height, weight, family_history, favc, fcvc, ncp, caec, smoke, ch2o, scc, faf, tue, calc, mtrans):
     df = featuringEngineering()
     model = createModel(df)
@@ -125,11 +125,10 @@ def recebeDados(gender, age, height, weight, family_history, favc, fcvc, ncp, ca
         'MTRANS': mtrans,
         'IMC': weight / (height ** 2)
     }
-    classe, imc = testar_paciente(dados,model,le)
+    classe, imc = testarPaciente(dados,model,le)
     return [classe, imc]
 
-def testar_paciente(dados, model, le):
-    print("=== Teste de Predição de Obesidade ===")
+def testarPaciente(dados, model, le):
 
     # Calcula IMC automaticamente
     imc = dados['IMC']
